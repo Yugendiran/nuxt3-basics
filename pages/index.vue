@@ -1,7 +1,9 @@
 <template>
   <div class="flex items-center justify-center w-full h-screen bg-black">
     <div class="h-auto max-h-[80%] w-[400px] bg-white/10 rounded-3xl p-5">
-      <h1 class="text-2xl font-bold text-white">Nuxt3 Tailwind Todo app.</h1>
+      <h1 class="text-2xl font-bold text-white">
+        Nuxt3 Tailwind Todo app.asdasasd
+      </h1>
 
       <div class="mt-5">
         <div
