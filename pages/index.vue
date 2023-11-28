@@ -1,13 +1,13 @@
 <template>
-  <div class="h-screen w-full bg-black flex justify-center items-center">
+  <div class="flex items-center justify-center w-full h-screen bg-black">
     <div class="h-auto max-h-[80%] w-[400px] bg-white/10 rounded-3xl p-5">
-      <h1 class="text-white text-2xl font-bold">Nuxt3 Tailwind Todo app</h1>
+      <h1 class="text-2xl font-bold text-white">Nuxt3 Tailwind Todo app.</h1>
 
       <div class="mt-5">
         <div
           v-for="(todo, index) in todoLists"
           :key="index"
-          class="flex gap-3 items-center text-white"
+          class="flex items-center gap-3 text-white"
         >
           <input
             @change="todo.isCompleted = !todo.isCompleted"
@@ -27,7 +27,7 @@
           <input
             v-model="inputTodo"
             type="text"
-            class="w-full h-12 px-4 rounded-lg bg-white/20 text-white"
+            class="w-full h-12 px-4 text-white rounded-lg bg-white/20"
             placeholder="Enter your task"
             @keypress.enter="addTodo()"
           />
