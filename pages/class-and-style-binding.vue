@@ -10,6 +10,7 @@
       '!bg-pink-500': bgcolor === 'pink',
     }"
   >
+    <Navbar currentPage="/class-and-style-binding" />
     <h1 :class="textcolor == 'white' ? 'text-white' : 'text-red-500'">Hello</h1>
   </div>
 </template>

@@ -1,5 +1,7 @@
 <template>
   <div>
+    <Navbar currentPage="/event-handling" />
+
     <button
       @click="boxIsOpen = true"
       class="px-3 py-1 text-white bg-blue-400 rounded-lg"

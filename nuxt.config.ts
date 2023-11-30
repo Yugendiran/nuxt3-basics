@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss"],
   app: {
     head: {
+      title: "nuxt-basics",
       link: [
         {
           rel: "stylesheet",

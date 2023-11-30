@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar currentPage="/list-rendering" />
     <h1>Student List</h1>
 
     <ul>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar currentPage="/form-input-binding" />
     <h1>Form input binding</h1>
 
     <div>

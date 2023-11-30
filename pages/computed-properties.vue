@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar currentPage="/computed-properties" />
     <p>My name is {{ name }}</p>
     <p>No of books published: {{ books.length }}</p>
   </div>

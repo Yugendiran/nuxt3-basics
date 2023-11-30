@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar currentPage="/conditional-rendering" />
     <p>Hello! {{ name }}</p>
     <p v-if="role == 'admin'">You are a admin</p>
     <p v-else-if="role == 'teacher'">You are a teacher</p>

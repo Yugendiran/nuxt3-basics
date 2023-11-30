@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar currentPage="/reactivity" />
     <h1>Counter Application</h1>
     <p>{{ counter }}</p>
     <button @click="counter++">+</button>
