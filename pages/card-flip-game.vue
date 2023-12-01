@@ -1,15 +1,21 @@
 <<<<<<< Updated upstream
 <template>
-  <div
-    class="grid items-center justify-center w-full min-h-screen grid-cols-5 bg-yellow-500"
-  >
-    <div
-      v-for="(card, index) in cards"
-      class="flex items-center justify-center w-20 h-20 text-3xl font-bold bg-white rounded-xl"
-      @click="openCard(index)"
-    >
-      <p v-if="card.isFlipped">{{ card.value }}</p>
-    </div>
+  <div>
+   
+   <Navbar currentPage="/card-flip-game" />
+ 
+   <div
+     class="grid items-center justify-center w-full min-h-screen grid-cols-5 bg-yellow-500"
+   >
+   
+     <div
+       v-for="(card, index) in cards"
+       class="flex items-center justify-center w-20 h-20 text-3xl font-bold bg-white rounded-xl"
+       @click="openCard(index)"
+     >
+       <p v-if="card.isFlipped">{{ card.value }}</p>
+     </div>
+   </div>
   </div>
  </template>
  
@@ -71,9 +77,8 @@
             this.openedCard.value1 = null;
             this.openedCard.value2 = null;
           } else {
-            this.cards.forEach((card) => {
-              card.isFlipped = false;
-            });
+            this.cards[this.openedCard.index1].isFlipped = false;
+            this.cards[this.openedCard.index2].isFlipped = false;
             this.openedCard.value1 = null;
             this.openedCard.value2 = null;
           }
