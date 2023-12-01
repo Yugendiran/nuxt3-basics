@@ -4,6 +4,7 @@
 
     <button
       @click="boxIsOpen = true"
+      @dblclick="boxIsOpen=false"
       class="px-3 py-1 text-white bg-blue-400 rounded-lg"
     >
       Toggle
