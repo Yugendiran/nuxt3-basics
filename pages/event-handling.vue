@@ -9,6 +9,8 @@
       Toggle
     </button>
 
+    <h1 class="text-center text-red-600 text-[200px]">Hello World</h1>
+
     <div v-if="boxIsOpen" class="mt-5 bg-blue-400 h-80 w-80"></div>
   </div>
 </template>
