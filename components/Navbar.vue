@@ -62,6 +62,14 @@ export default {
           name: "Components",
           path: "/component",
         },
+        {
+          name: "CardFlip",
+          path: "/card-flip-game",
+        },
+        {
+          name: "Calculator",
+          path: "/calc",
+        },
       ],
     };
   },
