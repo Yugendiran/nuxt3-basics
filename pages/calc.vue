@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar currentpage="/calc"/>
     <div class="flex items-center justify-center h-screen bg-gray-200">
       <div class="p-8 bg-white rounded shadow-md">
         <div class="grid grid-cols-4 gap-4">
