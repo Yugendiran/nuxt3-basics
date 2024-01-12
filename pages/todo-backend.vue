@@ -10,7 +10,7 @@
           class="flex items-center gap-3 text-white"
         >
           <input
-            @change="todo.isCompleted = !todo.isCompleted"
+            @change="updatetodo(index)"
             type="checkbox"
           />
           <p
@@ -19,7 +19,7 @@
               'line-through': todo.isCompleted,
             }"
           >
-            {{ todo.value }}
+            {{ todo.text }}
           </p>
         </div>
 
@@ -43,6 +43,7 @@ export default {
     return {
       todoLists: [],
       inputTodo: "",
+    
     };
   },
   mounted(){
@@ -51,23 +52,57 @@ export default {
   methods: {
     gettask(){
       this.$http.$get('/task/').then((res)=>{
-        console.log(res);
+        this.todoLists = res.task;
       });
     },
     addTodo() {
       if (this.inputTodo == "") {
         alert("Please enter your task");
       } else {
-        this.todoLists.push({
-          value: this.inputTodo,
-          isCompleted: false,
-        });
+      this.$http.$post("/task/add",{
+        body:{
+          text : this.inputTodo,
+        },
+      })
+      .then((res)=>{
+        if(res.success){
+          this.gettask();
+          this.inputTodo='';
+        }
+        else{
+          alert(res.message);
+        }
+      });
 
-        this.inputTodo = "";
-      }
+    }
+    },
+    updatetodo(index){
+      this.$http.$put(`/task/update/${this.todoLists[index].id}`,{
+        body:{
+          text : this.todoLists[index].text,
+          isCompleted : !this.todoLists[index].isCompleted,
+        }
+      }).then((res)=>{
+        if(res.success){
+          this.gettask();
+          this.inputTodo='';
+        }
+        else{
+          alert(res.message);
+        }
+      });
     },
     removeTodo(index) {
-      this.todoLists.splice(index, 1);
+      this.$http.$delete("/task/delete/"+this.todoLists[index].id)
+      .then((res)=>{
+        if(res.success){
+          this.gettask();
+        }
+        else{
+          alert(res.message);
+        }
+        
+      });
     },
   },
 };
